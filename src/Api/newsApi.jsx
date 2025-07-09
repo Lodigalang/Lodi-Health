@@ -84,15 +84,7 @@ function detectCategory(article) {
 
 function getHealthArticles() {
   return axiosNews
-    .get("/top-headlines", {
-      params: {
-        country: "us",
-        category: "health",
-      },
-      headers: {
-        Authorization: `Bearer ${API_KEY}`,
-      },
-    })
+    .get("/news")
     .then((res) => {
       console.log("Artikel berhasil diambil:", res.data);
 

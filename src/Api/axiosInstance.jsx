@@ -1,10 +1,7 @@
 import axios from "axios";
 
 const axiosNews = axios.create({
-  baseURL: "https://newsapi.org/v2/",
-  headers: {
-    "Content-Type": "application/json",
-  },
+  baseURL: "/api",
 });
 
 const axiosMock = axios.create({
