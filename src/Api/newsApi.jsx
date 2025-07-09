@@ -88,7 +88,9 @@ function getHealthArticles() {
       params: {
         country: "us",
         category: "health",
-        apiKey: API_KEY,
+      },
+      headers: {
+        Authorization: `Bearer ${API_KEY}`,
       },
     })
     .then((res) => {
