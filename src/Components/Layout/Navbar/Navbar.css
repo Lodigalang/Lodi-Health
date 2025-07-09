@@ -1,0 +1,62 @@
+@import "tailwindcss";
+
+@layer components {
+  .navbar {
+    @apply fixed top-0 left-0 z-50 w-full bg-[#4a834a]/70 xl:h-[75px] h-[65px]
+  backdrop-blur-md transition-transform duration-500 transform;
+  }
+
+  .navbar-container {
+    @apply w-full flex flex-wrap items-center justify-between mx-auto lg:px-0.5 px-1 pb-[5px] gap-x-3;
+  }
+
+  .navbar-brand-container {
+    @apply flex items-center space-x-3 rtl:space-x-reverse xl:pl-10 pl-1.5;
+  }
+  .navbar-brand {
+    @apply self-center lg:text-2xl text-xl font-extrabold whitespace-nowrap text-[#ffffff] text-shadow-lg;
+  }
+
+  .navbar-link-container {
+    @apply items-center justify-between hidden w-full lg:flex lg:w-auto lg:order-1;
+  }
+  .navbar-link-container.show {
+    @apply block lg:flex;
+  }
+
+  .navbar-link {
+    /*dalamnya menu bar dan desktop */
+    @apply flex flex-col p-4 lg:p-0 mt-4 font-medium border justify-center
+   border-[#87ba87] rounded-lg bg-[#87ba87] xl:text-[22px] text-[18px]
+   xl:space-x-8 space-x-5 rtl:space-x-reverse lg:flex-row 
+   lg:mt-0 lg:border-0 lg:bg-transparent;
+  }
+
+  .navbar-button {
+    @apply flex lg:order-2 space-x-2 lg:space-x-3 rtl:space-x-reverse xl:pr-10;
+  }
+
+  .login {
+    @apply text-white bg-[#76b576] hover:bg-[#659a65] shadow-sm
+  focus:ring-4 focus:outline-none focus:ring-gray-100 
+  font-medium rounded-lg  text-xs lg:text-lg px-4 py-2 text-center h-auto;
+  }
+
+  .daftar {
+    @apply text-white bg-transparent border-2 border-[#76b576] hover:bg-[#76b576] shadow-sm
+  focus:ring-4 focus:outline-none focus:ring-gray-100 
+  font-medium rounded-lg text-xs lg:text-lg px-4 py-2 text-center  h-auto;
+  }
+
+  .menu-bar {
+    @apply inline-flex items-center p-2 w-10 h-10 justify-center 
+    text-white rounded-lg lg:hidden 
+  hover:bg-[#76b576] focus:outline-none focus:ring-green-50;
+  }
+}
+
+.menu-bar.show {
+  @apply inline-flex items-center p-2 w-10 h-10 justify-center 
+  text-sm text-white rounded-lg lg:hidden
+  focus:outline-none focus:ring-green-50 bg-[#87b787];
+}
