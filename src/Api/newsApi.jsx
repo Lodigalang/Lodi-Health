@@ -1,5 +1,6 @@
 import { axiosNews } from "./axiosInstance";
 
+const isDev = import.meta.env.DEV;
 const API_KEY = import.meta.env.VITE_NEWSAPI_KEY;
 
 function detectCategory(article) {
@@ -84,10 +85,22 @@ function detectCategory(article) {
 
 function getHealthArticles() {
   return axiosNews
-    .get("/news")
-    .then((res) => {
-      console.log("Artikel berhasil diambil:", res.data);
+    .get(isDev ? "/top-headlines" : "/news", {
+      params: isDev
+        ? {
+            country: "us",
+            category: "health",
+            apiKey: API_KEY,
+          }
+        : {},
 
+      headers: isDev
+        ? {}
+        : {
+            Authorization: `Bearer ${API_KEY}`,
+          },
+    })
+    .then((res) => {
       if (!res.data.articles || res.data.articles.length === 0) {
         console.warn("Tidak ada artikel yang tersedia dari NewsAPI.");
         return [];
