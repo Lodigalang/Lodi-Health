@@ -88,7 +88,7 @@ function getHealthArticles() {
       params: {
         country: "us",
         category: "health",
-        apikey: API_KEY,
+        apiKey: API_KEY,
       },
     })
     .then((res) => {
