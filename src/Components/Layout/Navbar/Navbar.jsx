@@ -77,12 +77,10 @@ function Navbar(props) {
             >
               <img
                 src="/Logo.png"
-                className="xl:h-[70px] h-[60px]"
+                className="xl:h-[70px] sm:h-[60px] h-[50px]"
                 alt="Logo"
               />
-              <span className="navbar-brand text-xl font-bold">
-                {props.brand}
-              </span>
+              <span className="navbar-brand">{props.brand}</span>
             </Link>
           </div>
 
