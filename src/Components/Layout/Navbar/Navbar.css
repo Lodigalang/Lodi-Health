@@ -39,13 +39,13 @@
   .login {
     @apply text-white bg-[#76b576] hover:bg-[#659a65] shadow-sm
   focus:ring-4 focus:outline-none focus:ring-gray-100 
-  font-medium rounded-lg  text-xs lg:text-lg px-4 py-2 text-center h-auto;
+  font-medium rounded-lg  text-xs lg:text-lg px-2 py-2 text-center h-auto;
   }
 
   .daftar {
     @apply text-white bg-transparent border-2 border-[#76b576] hover:bg-[#76b576] shadow-sm
   focus:ring-4 focus:outline-none focus:ring-gray-100 
-  font-medium rounded-lg text-xs lg:text-lg px-4 py-2 text-center  h-auto;
+  font-medium rounded-lg text-xs lg:text-lg px-2 py-2 text-center  h-auto;
   }
 
   .menu-bar {
