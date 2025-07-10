@@ -6,12 +6,15 @@ function CardProduk(props) {
   return (
     <div className="overflow-x-auto">
       <div className="flex gap-6 sm:grid sm:grid-cols-2 xl:grid-cols-4 sm:gap-8 min-w-[600px] sm:min-w-0">
-        {props.produkList.map((produk) => {
+        {props.produkList.map((produk, index) => {
           const jumlah = props.keranjang?.[produk.id] || 0;
           return (
             <div
               key={produk.id}
               className="min-w-[250px] max-w-[250px] sm:min-w-0 sm:max-w-full bg-white border border-gray-200 rounded-2xl shadow-lg hover:shadow-xl transition duration-300 flex-shrink-0 sm:flex-shrink"
+              data-aos="zoom-in"
+              data-aos-delay={index * 100}
+              data-aos-duration="1000"
             >
               <Link to={`/toko-kesehatan/${produk.id}`}>
                 <img

@@ -10,7 +10,11 @@ function Breadcrumb() {
   return (
     <ol className="flex items-center space-x-2">
       <li>
-        <Link to="/" className="hover:underline text-white/90">
+        <Link
+          to="/"
+          className="hover:underline text-white/90"
+          state={{ scrollY: window.scrollY }}
+        >
           Beranda
         </Link>
       </li>
@@ -30,7 +34,11 @@ function Breadcrumb() {
             {isLast ? (
               <span className="text-white">{label}</span>
             ) : (
-              <Link to={to} className="hover:underline text-white">
+              <Link
+                to={to}
+                className="hover:underline text-white"
+                state={{ scrollY: window.scrollY }}
+              >
                 {label}
               </Link>
             )}

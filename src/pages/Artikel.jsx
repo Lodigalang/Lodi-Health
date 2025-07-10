@@ -70,17 +70,26 @@ function Artikel() {
   return (
     <section>
       <header className="mb-10 text-center py-40 bg-gradient-to-b from-[#82c182] to-[#7fb883]">
-        <h1 className="text-7xl font-bold text-white mb-4">
+        <h1
+          className="text-7xl font-bold text-white mb-4"
+          data-aos="zoom-in-down"
+        >
           Pusat Artikel Kesehatan
         </h1>
-        <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+        <p
+          className="text-lg text-gray-600 max-w-2xl mx-auto"
+          data-aos="zoom-in"
+        >
           Telusuri artikel kesehatan berbasis bukti yang dikurasi oleh para
           profesional medis.
         </p>
       </header>
       <div className="px-5 mb-10">
         <div className="mb-5 py-5">
-          <div className="flex flex-col md:flex-row gap-4 mb-10 justify-between items-start md:items-center md:justify-center">
+          <div
+            className="flex flex-col md:flex-row gap-4 mb-10 justify-between items-start md:items-center md:justify-center"
+            data-aos="zoom-in"
+          >
             <div className="relative w-full md:w-200">
               <input
                 type="text"
@@ -109,7 +118,7 @@ function Artikel() {
           </div>
 
           <div className="flex flex-wrap gap-2">
-            {categories.map((cat) => (
+            {categories.map((cat, i) => (
               <button
                 key={cat}
                 onClick={() => setCategory(cat)}
@@ -119,6 +128,9 @@ function Artikel() {
             ? "bg-green-600 text-white border-green-600"
             : "bg-white text-gray-600 border-gray-300 hover:border-green-500"
         }`}
+                data-aos="fade-up"
+                data-aos-delay={i * 100}
+                data-aos-duration="600"
               >
                 {cat}
               </button>
@@ -148,6 +160,9 @@ function Artikel() {
                       ? "bg-green-600 text-white border-green-600"
                       : "bg-white text-gray-700 border-gray-300 hover:border-green-400"
                   }`}
+                  data-aos="fade-up"
+                  data-aos-delay={i * 100}
+                  data-aos-duration="600"
                 >
                   {i + 1}
                 </button>

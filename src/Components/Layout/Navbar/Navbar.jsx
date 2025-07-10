@@ -167,27 +167,58 @@ function Navbar(props) {
                 {props.links.map((link, index) => (
                   <li key={index}>
                     {link.href.startsWith("#") ? (
-                      <ScrollLink
-                        to={link.href.substring(1)} // hapus tanda #
-                        smooth={true} // animasi smooth scroll
-                        duration={500} // durasi animasi scroll dalam ms
-                        offset={-70} // offset jika navbar fixed (contoh 70px tinggi navbar)
-                        onClick={() => {
-                          setActiveIndex(index);
-                          setMenuOpen(false); // misal mau close menu setelah klik
-                        }}
-                        className={`cursor-pointer transition-opacity duration-200 ${
-                          index === activeIndex
-                            ? "text-white font-semibold opacity-100"
-                            : "text-white opacity-60 hover:opacity-80"
-                        }`}
-                      >
-                        {link.label}
-                      </ScrollLink>
+                      location.pathname === "/" ? (
+                        <ScrollLink
+                          to={link.href.substring(1)}
+                          smooth={true}
+                          duration={500}
+                          offset={-70}
+                          onClick={() => {
+                            setActiveIndex(index);
+                            setMenuOpen(false);
+                          }}
+                          className={`cursor-pointer transition-opacity duration-200 ${
+                            index === activeIndex
+                              ? "text-white font-semibold opacity-100"
+                              : "text-white opacity-60 hover:opacity-80"
+                          }`}
+                        >
+                          {link.label}
+                        </ScrollLink>
+                      ) : (
+                        // Jika belum di halaman beranda, redirect ke "/" dan kirim state
+                        <Link
+                          to="/"
+                          onClick={() => {
+                            sessionStorage.setItem(
+                              "scrollTo",
+                              link.href.substring(1)
+                            );
+                            setActiveIndex(index);
+                            setMenuOpen(false);
+                          }}
+                          className={`cursor-pointer transition-opacity duration-200 ${
+                            index === activeIndex
+                              ? "text-white font-semibold opacity-100"
+                              : "text-white opacity-60 hover:opacity-80"
+                          }`}
+                        >
+                          {link.label}
+                        </Link>
+                      )
                     ) : (
                       <Link
                         to={link.href}
-                        onClick={() => setActiveIndex(index)}
+                        state={{
+                          scrollTo: props.links[index].href.substring(1),
+                        }}
+                        onClick={() => {
+                          setActiveIndex(index);
+                          sessionStorage.setItem(
+                            "lastSection",
+                            props.links[index].href.substring(1)
+                          );
+                        }}
                         className={`transition-opacity duration-200 ${
                           index === activeIndex
                             ? "text-white font-semibold opacity-100"

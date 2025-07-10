@@ -56,17 +56,23 @@ function Konsultasi() {
   return (
     <div className="container mx-auto px-4 py-8 mt-35">
       <header className="mb-10 text-center">
-        <h1 className="text-3xl md:text-4xl font-bold text-gray-800 mb-2 text-shadow-md">
+        <h1
+          className="text-3xl md:text-4xl font-bold text-gray-800 mb-2 text-shadow-md"
+          data-aos="zoom-in-down"
+        >
           Konsultasi <span className="text-[#8cdc8c]">Dokter Online</span>
         </h1>
-        <p className="text-gray-600 max-w-2xl mx-auto">
+        <p className="text-gray-600 max-w-2xl mx-auto" data-aos="zoom-in">
           Chat langsung dengan dokter spesialis pilihan Anda kapan saja dan di
           mana saja
         </p>
       </header>
 
       {/* Search Input */}
-      <div className="bg-white rounded-xl p-6 mb-6 shadow-md">
+      <div
+        className="bg-white rounded-xl p-6 mb-6 shadow-md"
+        data-aos="zoom-in"
+      >
         <input
           type="text"
           placeholder="Cari nama dokter atau spesialisasi..."
@@ -78,7 +84,7 @@ function Konsultasi() {
 
       {/* Kategori Filter */}
       <div className="flex flex-wrap gap-3 mb-8 justify-center">
-        {categories.map((cat) => (
+        {categories.map((cat, index) => (
           <button
             key={cat}
             onClick={() => setActiveCategory(cat)}
@@ -87,6 +93,9 @@ function Konsultasi() {
                 ? "bg-[#8cdc8c] text-white border-[#8cdc8c]"
                 : "border-gray-300 text-gray-700 hover:bg-blue-100"
             }`}
+            data-aos="fade-up"
+            data-aos-delay={index * 100}
+            data-aos-duration="600"
           >
             {cat}
           </button>
@@ -96,7 +105,7 @@ function Konsultasi() {
       {/* Daftar Dokter */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {currentDoctors.length > 0 ? (
-          currentDoctors.map((dokter) => (
+          currentDoctors.map((dokter, index) => (
             <CardDoctor
               key={dokter.id}
               nama={dokter.name}
@@ -107,6 +116,7 @@ function Konsultasi() {
                   ? dokter.image
                   : `https://raw.githubusercontent.com/Lodigalang/web-health/main/dokter${dokter.image}`
               }
+              delay={index * 100}
             />
           ))
         ) : (
@@ -127,6 +137,9 @@ function Konsultasi() {
                   ? "bg-[#8cdc8c] text-white border-[#8cdc8c]"
                   : "bg-white text-gray-700 border-gray-300 hover:bg-blue-100"
               }`}
+              data-aos="fade-up"
+              data-aos-delay={i * 100}
+              data-aos-duration="600"
             >
               {i + 1}
             </button>

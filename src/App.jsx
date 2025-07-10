@@ -12,6 +12,9 @@ import "react-toastify/dist/ReactToastify.css";
 import Setting from "./pages/setting";
 import Reservasi from "./pages/Reservasi";
 import Konsultasi from "./pages/Konsultasi";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 
 function App() {
   const location = useLocation();
@@ -25,6 +28,14 @@ function App() {
     { label: "Blog", href: "#blog", isInternal: true },
     { label: "Kontak", href: "#kontak", isInternal: true },
   ];
+
+  useEffect(() => {
+    AOS.init({ duration: 2000, once: true });
+  }, []);
+
+  useEffect(() => {
+    AOS.refresh();
+  }, [location.pathname]);
 
   return (
     <>

@@ -91,11 +91,17 @@ function TokoKesehatan() {
   return (
     <section className="px-4 py-8">
       <div className="mt-30">
-        <h1 className="text-5xl font-bold text-center mb-8 text-shadow-md">
+        <h1
+          className="text-5xl font-bold text-center mb-8 text-shadow-md"
+          data-aos="zoom-in-down"
+        >
           Daftar <span className="text-[#8cdc8c]">Produk Obat</span>
         </h1>
 
-        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-6">
+        <div
+          className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-6"
+          data-aos="zoom-in"
+        >
           <input
             type="text"
             placeholder="Cari produk..."
@@ -105,7 +111,7 @@ function TokoKesehatan() {
           />
 
           <div className="flex flex-wrap gap-2">
-            {categories.map((kat) => (
+            {categories.map((kat, index) => (
               <button
                 key={kat}
                 onClick={() => setCategory(kat)}
@@ -114,6 +120,9 @@ function TokoKesehatan() {
                     ? "bg-[#8cdc8c] text-white border-[#8cdc8c]"
                     : "bg-white text-gray-600 border-gray-300 hover:border-[#8cdc8c]"
                 }`}
+                data-aos="fade-up"
+                data-aos-delay={index * 100}
+                data-aos-duration="600"
               >
                 {kat}
               </button>
@@ -141,6 +150,9 @@ function TokoKesehatan() {
                 ? "bg-green-600 text-white border-green-600"
                 : "bg-white text-gray-600 border-gray-300 hover:border-green-500"
             }`}
+            data-aos="fade-up"
+            data-aos-delay={i * 100}
+            data-aos-duration="600"
           >
             {i + 1}
           </button>

@@ -24,10 +24,13 @@ function Blog() {
     >
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-white text-shadow-md mb-4">
+          <h2
+            className="text-4xl font-bold text-white text-shadow-md mb-4"
+            data-aos="zoom-in-down"
+          >
             Wawasan & Tips Sehat Terkini
           </h2>
-          <p className="text-white max-w-2xl mx-auto">
+          <p className="text-white max-w-2xl mx-auto" data-aos="zoom-in">
             Temukan tips , gaya hidup, dan berita terkait kesehatan
           </p>
         </div>
@@ -37,7 +40,7 @@ function Blog() {
           <CardBlog posts={posts} />
         )}
 
-        <div className="text-center mt-12">
+        <div className="text-center mt-12" data-aos="zoom-in-up">
           <Link
             to="/blog"
             className="inline-block bg-[#569b56] text-white px-6 py-3 rounded-full font-semibold hover:bg-[#548254] shadow-[#569b56] transition shadow-md"

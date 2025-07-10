@@ -25,7 +25,11 @@ export function UnderDevProvider({ children }) {
       {children}
 
       {isOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50">
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center"
+          data-aos="zoom-in"
+          data-aos-duration="400"
+        >
           <div className="bg-white rounded-xl p-6 shadow-xl text-center w-[90%] max-w-md animate-fadeIn">
             <h2 className="text-xl font-bold text-gray-800 mb-2">
               Mohon Maaf 🙏

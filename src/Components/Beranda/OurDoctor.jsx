@@ -6,10 +6,16 @@ function OurDoctor() {
   return (
     <section className="bg-[white] py-12 px-5 max-w-screen-xl mx-auto">
       <div className="text-center space-y-3">
-        <h2 className="text-3xl sm:text-4xl leading-normal font-extrabold tracking-tight text-gray-600 text-shadow-md">
+        <h2
+          className="text-3xl sm:text-4xl leading-normal font-extrabold tracking-tight text-gray-600 text-shadow-md"
+          data-aos="zoom-in-down"
+        >
           Tim <span className="text-[#8cdc8c]">Medis Kami</span>
         </h2>
-        <p className="text-[grey] text-base sm:text-lg max-w-2xl mx-auto">
+        <p
+          className="text-[grey] text-base sm:text-lg max-w-2xl mx-auto"
+          data-aos="zoom-in"
+        >
           Percayakan kesehatan Anda kepada tenaga medis berpengalaman kami.
           Konsultasi online tersedia kapan saja, di mana saja
         </p>
@@ -41,7 +47,7 @@ function OurDoctor() {
         />
       </div>
       {location.pathname === "/" && (
-        <div className="flex justify-center">
+        <div className="flex justify-center" data-aos="zoom-in">
           <Link
             to="/konsultasi-online"
             className="inline-flex items-center justify-center 

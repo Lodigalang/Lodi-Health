@@ -1,7 +1,10 @@
 function Testimoni() {
   return (
     <section className="bg-gradient-to-b from-[#82c182] to-[#7fb883]">
-      <div className="max-w-screen-xl px-4 py-8 mx-auto text-center lg:py-24 lg:px-6">
+      <div
+        className="max-w-screen-xl px-4 py-8 mx-auto text-center lg:py-24 lg:px-6"
+        data-aos="zoom-in"
+      >
         <h2 className="text-3xl font-bold text-white text-shadow-md mb-8">
           Apa Kata Pengguna Kami
         </h2>

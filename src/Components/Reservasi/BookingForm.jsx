@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import Select from "react-select";
 import { getUserByEmail } from "../../Api/userApi";
 import { useAuthContext } from "../Context/AuthContext";
+import { useFormModal } from "../Context/FormContext";
 import {
   getProvinces,
   getCitiesByProvinceId,
@@ -44,6 +45,7 @@ function BookingForm(props) {
   const [specialistOptions, setSpecialistOptions] = useState([]);
   const [filteredDoctors, setFilteredDoctors] = useState([]);
   const { user } = useAuthContext();
+  const { setFormAktif } = useFormModal();
 
   useEffect(() => {
     const dateInput = document.getElementById("date");
@@ -169,8 +171,16 @@ function BookingForm(props) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!formData.time)
+
+    if (!user) {
+      toast.warning("Silakan login terlebih dahulu untuk membuat janji.");
+      setFormAktif("masuk");
+      return;
+    }
+
+    if (!formData.time) {
       return toast.warning("Silakan pilih jam untuk janji temu");
+    }
 
     // Data yang akan dikirim ke API
     const dataToSend = {

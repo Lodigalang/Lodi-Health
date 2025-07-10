@@ -21,7 +21,12 @@ function CardDoctor(props) {
   };
 
   return (
-    <div className=" w-full  lg:max-w-full lg:flex mx-auto my-5 justify-center hover:-translate-y-1 group transition-all duration-300 shadow-md hover:shadow-2xl">
+    <div
+      className=" w-full  lg:max-w-full lg:flex mx-auto my-5 justify-center hover:-translate-y-1 group transition-all duration-300 shadow-md hover:shadow-2xl"
+      data-aos="zoom-in"
+      data-aos-delay={props.delay || 0}
+      data-aos-duration="1000"
+    >
       <div
         className={`${
           isKonsultasiPage

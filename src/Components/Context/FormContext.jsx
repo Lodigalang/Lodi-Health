@@ -17,13 +17,21 @@ export function FormProvider({ children }) {
   let kontenForm = null;
   if (formAktif === "masuk") {
     kontenForm = (
-      <div className="fixed inset-0 z-50 flex justify-center items-center bg-opacity-50">
+      <div
+        className="fixed inset-0 z-50 flex justify-center items-center bg-opacity-50"
+        data-aos="zoom-in"
+        data-aos-duration="400"
+      >
         <Masuk onClose={() => setFormAktif(null)} onFormChange={setFormAktif} />
       </div>
     );
   } else if (formAktif === "daftar") {
     kontenForm = (
-      <div className="fixed inset-0 z-50 flex justify-center items-center bg-opacity-50">
+      <div
+        className="fixed inset-0 z-50 flex justify-center items-center bg-opacity-50"
+        data-aos="zoom-in"
+        data-aos-duration="400"
+      >
         <Daftar
           onClose={() => setFormAktif(null)}
           onFormChange={setFormAktif}

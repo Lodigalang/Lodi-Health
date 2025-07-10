@@ -7,7 +7,7 @@ function Kontak(props) {
       id={props.id}
     >
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-        <div>
+        <div data-aos="zoom-in-right">
           <h2 className="text-3xl md:text-4xl font-bold leading-tight text-shadow-md">
             Hubungi <span className="text-[#57bc57]">Kami</span>
           </h2>

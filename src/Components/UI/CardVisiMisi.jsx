@@ -50,6 +50,7 @@ function CardVisiMisi() {
         <div
           key={index}
           className="bg-white p-8 rounded-xl shadow-lg flex-1 transition hover:shadow-xl"
+          data-aos="zoom-in"
         >
           <div className="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mb-6">
             {item.icon}

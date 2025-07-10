@@ -3,7 +3,7 @@ import CardProduk from "../UI/CardProduk";
 import { getProducts } from "../../Api/produkApi";
 import { Link } from "react-router-dom";
 
-function Produk() {
+function Produk(props) {
   const [produkList, setProdukList] = useState([]);
 
   useEffect(() => {
@@ -15,10 +15,13 @@ function Produk() {
     });
   }, []);
   return (
-    <section className="py-20 my-16 bg-white">
+    <section className="py-20 my-16 bg-white" id={props.id}>
       <div className="max-w-7xl mx-auto px-4 flex flex-col lg:flex-row gap-8">
         <div className="lg:w-1/4 w-full">
-          <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4 leading-tight">
+          <h2
+            className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4 leading-tight"
+            data-aos="fade-right"
+          >
             Beli <span className="text-[#4CAF50]">Obat </span> &{" "}
             <span className="text-[#4CAF50]">Suplemen </span> Kesehatan
           </h2>
@@ -27,7 +30,7 @@ function Produk() {
         <div className="lg:w-3/4 w-full flex flex-col gap-4">
           <CardProduk produkList={produkList} />
 
-          <div className="mt-4 text-left">
+          <div className="mt-4 text-left" data-aos="zoom-in">
             <Link
               to="/toko-kesehatan"
               className="text-[#8cdc8c] font-bold text-lg hover:underline inline-flex items-center"

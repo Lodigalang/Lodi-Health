@@ -18,23 +18,33 @@ function Features(props) {
     >
       <div className="flex flex-col text-center space-y-8 max-w-screen-lg w-full">
         <div className="space-y-5 px-4 pb-5">
-          <h2 className="font-bold text-3xl sm:text-4xl md:text-5xl text-white text-shadow-md">
+          <h2
+            className="font-bold text-3xl sm:text-4xl md:text-5xl text-white text-shadow-md"
+            data-aos="zoom-in-down"
+          >
             Layanan Kami
           </h2>
-          <p className="text-white text-base sm:text-lg max-w-2xl mx-auto">
+          <p
+            className="text-white text-base sm:text-lg max-w-2xl mx-auto"
+            data-aos="zoom-in"
+          >
             Kami menyediakan layanan kesehatan terbaik yang dapat disesuaikan
             dengan kebutuhan Anda. Mudah, aman, dan terpercaya langsung dari
             rumah.
           </p>
         </div>
 
-        <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3 w-full px-4">
+        <div
+          className="grid gap-6 sm:grid-cols-2 md:grid-cols-3 w-full px-4"
+          data-aos-duration="3000"
+        >
           <button onClick={showUnderDev}>
             <CardService
               src={Homecare}
               alt="homecare"
               title="Homecare"
               description="Jalani perawatan medis langsung dari rumah Anda tanpa harus ke klinik"
+              animasi="zoom-in"
             />
           </button>
           <Link to="/toko-kesehatan">
@@ -43,6 +53,8 @@ function Features(props) {
               alt="toko kesehatan"
               title="Toko Kesehatan"
               description="Belanja obat dan alat kesehatan terpercaya dalam satu tempat"
+              animasi="zoom-in"
+              delay="300"
             />
           </Link>
           <Link to="/konsultasi-online">
@@ -51,6 +63,8 @@ function Features(props) {
               alt="konsultasi online"
               title="Konsultasi Online"
               description="Konsultasi dengan dokter umum & spesialis melalui video call"
+              animasi="zoom-in"
+              delay="600"
             />
           </Link>
           <Link to="/reservasi-klinik">
@@ -59,6 +73,8 @@ function Features(props) {
               alt="reservasi klinik"
               title="Reservasi Klinik"
               description="Booking jadwal konsultasi dokter secara online dengan mudah"
+              animasi="zoom-in"
+              delay="600"
             />
           </Link>
           <button onClick={showUnderDev}>
@@ -67,6 +83,8 @@ function Features(props) {
               alt="cek kesehatan mandiri"
               title="Cek Kesehatan Mandiri"
               description="Periksa kesehatan fisik dan mental anda kapan saja secara mandiri"
+              animasi="zoom-in"
+              delay="300"
             />
           </button>
           <button onClick={showUnderDev}>
@@ -75,6 +93,7 @@ function Features(props) {
               alt="perawatan"
               title="Perawatan Khusus"
               description="Layanan untuk lansia, pasca operasi, dan kebutuhan khusus."
+              animasi="zoom-in"
             />
           </button>
         </div>

@@ -82,7 +82,10 @@ function FormKontak() {
   };
 
   return (
-    <div className="bg-gradient-to-b from-[#569956] to-[#5c905f] p-8 rounded-xl shadow-lg">
+    <div
+      className="bg-gradient-to-b from-[#569956] to-[#5c905f] p-8 rounded-xl shadow-lg"
+      data-aos="zoom-in-left"
+    >
       <form onSubmit={handleSubmit}>
         {fields.map((field, index) => (
           <div className="mb-4" key={index}>

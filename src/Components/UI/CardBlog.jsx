@@ -20,7 +20,12 @@ function CardBlog(props) {
           rel="noopener noreferrer"
           className="block"
         >
-          <article className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transform hover:-translate-y-1 transition duration-300">
+          <article
+            className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transform hover:-translate-y-1 transition duration-300"
+            data-aos="zoom-in"
+            data-aos-delay={index * 100}
+            data-aos-duration="1000"
+          >
             <img
               src={post.image || "https://placehold.co/600x400"}
               alt={post.title}
