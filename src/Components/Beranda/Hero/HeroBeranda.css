@@ -3,7 +3,7 @@
 @layer components {
   .hero-background {
     @apply bg-[linear-gradient(#8cc99260,#8cc99260),url('/bg-home.svg')]
-   bg-cover bg-no-repeat min-h-screen w-auto;
+   bg-cover bg-no-repeat min-h-screen w-auto max-w-screen;
   }
 
   .hero-container {

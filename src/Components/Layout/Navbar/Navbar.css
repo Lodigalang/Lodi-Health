@@ -3,7 +3,7 @@
 @layer components {
   .navbar {
     @apply fixed top-0 left-0 z-50 w-full bg-[#4a834a]/70 xl:h-[75px] h-[65px]
-  backdrop-blur-md transition-transform duration-500 transform;
+  backdrop-blur-md transition-transform duration-500 transform max-w-screen;
   }
 
   .navbar-container {
@@ -39,13 +39,13 @@
   .login {
     @apply text-white bg-[#76b576] hover:bg-[#659a65] shadow-sm
   focus:ring-4 focus:outline-none focus:ring-gray-100 
-  font-medium rounded-lg  text-xs lg:text-lg px-2 py-2 text-center h-auto;
+  font-medium rounded-lg  text-xs lg:text-lg px-4 py-2 text-center h-auto;
   }
 
   .daftar {
     @apply text-white bg-transparent border-2 border-[#76b576] hover:bg-[#76b576] shadow-sm
   focus:ring-4 focus:outline-none focus:ring-gray-100 
-  font-medium rounded-lg text-xs lg:text-lg px-2 py-2 text-center  h-auto;
+  font-medium rounded-lg text-xs lg:text-lg px-4 py-2 text-center  h-auto;
   }
 
   .menu-bar {
